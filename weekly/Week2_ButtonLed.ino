@@ -1,7 +1,7 @@
 //global varibles
 int ledPin = 13;  //ledPin
 int delayTime = 1000; //delay time for blinking
-int buttonPin = A0;  //buttonPin
+int buttonPin = 2;  //buttonPin
 
 void setup(){
   //initialize the serial port for debug and testing
