@@ -1,9 +1,9 @@
 //global varibles for output leds//
 //led output pins
-const int ledPin = 13;
+const int led1Pin = 13;
 
 //track the state of the LED
-bool ledState = 0;
+bool led1State = 0;
 
 //global variables for buttons and debounce//
 //button pin numbers
@@ -19,25 +19,24 @@ int button1State = 1;
 uint32_t button1DebounceTime;
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
+  pinMode(led1Pin, OUTPUT);
   pinMode(button1Pin, INPUT);
 }
 
 
 void loop() {
   //call the buttonDB function to read the button and filter the signal
-  buttonDB();
+  buttonDB(button1Pin);
   
   //write the ledState
-  digitalWrite(ledPin, ledState);
-
-  //save the current button read for next time
-  button1LastRead = button1Read;
+  digitalWrite(led1Pin, led1State);
 }
 
-void buttonDB(){
+
+//FUNCTION PROTOTYPES//
+void buttonDB(int buttonPin){
   //read the button into the a local variable
-  int button1Read = digitalRead(button1Pin);
+  int button1Read = digitalRead(buttonPin);
 
   //is the button read different from last read?
   if (button1Read != button1LastRead) {
@@ -57,8 +56,10 @@ void buttonDB(){
       //if the stable state is low after a successful debounce
       if (button1State == 0) {
         //toggle the ledState
-        ledState = !ledState;
+        led1State = !led1State;
       }
     }
   }
+  //save the current button read for next time
+  button1LastRead = button1Read;
 }

@@ -1,9 +1,9 @@
 //global varibles for output leds//
 //led output pins
-const int ledPin = 13;
+const int led1Pin = 13;
 
 //this bool will track the state of the LED in the software as TRUE or FALSE
-bool ledState = 0;
+bool led1State = 0;
 
 //global variables for buttons//
 //button pin numbers
@@ -13,7 +13,7 @@ const int button1Pin = 2;
 int button1LastRead = 1;
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
+  pinMode(led1Pin, OUTPUT);
   pinMode(button1Pin, INPUT);
 }
 
@@ -26,12 +26,12 @@ void loop() {
     //if so, check to see if it is LOW
     if (button1Read == 0) {
       //if so, toggle the ledState
-      ledState = !ledState;
+      led1State = !led1State;
     }
   }
 
   //set the ledState
-  digitalWrite(ledPin, ledState);
+  digitalWrite(led1Pin, led1State);
 
   //save the buttonRead for next time around
   button1LastRead = button1Read;
