@@ -8,8 +8,6 @@ const int button1Pin = 2;
 bool ledState = 0;
 
 void setup() {
-  //open a Serial port
-  Serial.begin(500000);
   pinMode(ledPin, OUTPUT);
   pinMode(button1Pin, INPUT);
 }

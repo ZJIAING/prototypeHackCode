@@ -1,5 +1,6 @@
 //led variables
-const byte ledPin = 13;
+const int ledPin1 = 13;
+const int ledPin2 = 12;
 //volitile is used when a variable is chaged outside the program scope such as in an interrupt
 volatile byte ledState = LOW; 
 
@@ -8,8 +9,9 @@ const byte buttonPin = 2;
  volatile int lastDebounceTime;
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
-  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+  pinMode(buttonPin, INPUT);
   attachInterrupt(digitalPinToInterrupt(buttonPin), buttonISR, LOW);
 }
 

@@ -19,8 +19,6 @@ int button1State = 1;
 uint32_t button1DebounceTime;
 
 void setup() {
-  //open a Serial port
-  Serial.begin(9600);
   pinMode(ledPin, OUTPUT);
   pinMode(button1Pin, INPUT);
 }
