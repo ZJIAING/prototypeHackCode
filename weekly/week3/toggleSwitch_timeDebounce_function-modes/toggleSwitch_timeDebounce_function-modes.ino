@@ -74,7 +74,7 @@ void buttonDB(int buttonPin) {
       button1State = button1Read;
       //if the stable state is low after a successful debounce
       if (button1State == 0) {
-        //increment the mode of the LEDs
+        //increment the mode of the LED
         ledMode += 1;
         //if the ledmode is higher than 3 send it back to 0
         if (ledMode > 4) {
